@@ -85,6 +85,9 @@ function AntiWallhop:isGrounded(): boolean
 
 	local verticalVelocity = self.rootPart.AssemblyLinearVelocity.Y
 
+	-- Floor detection uses an initial factor of 1.2 when grounded and 1.5 when
+	-- falling. Since we're only concerned with floor detection when falling,
+	-- the factor starts at 1.5.
 	local factor = 1.5
 	local minVelocity = -125 * halfSize.Y
 
