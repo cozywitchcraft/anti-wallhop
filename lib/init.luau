@@ -13,7 +13,7 @@ type AntiWallhopImpl = {
 	destroy: (self: AntiWallhop) -> (),
 }
 
-type AntiWallhop = typeof(setmetatable({} :: {
+export type AntiWallhop = typeof(setmetatable({} :: {
 	character: Model,
 	humanoid: Humanoid,
 	rootPart: BasePart,
