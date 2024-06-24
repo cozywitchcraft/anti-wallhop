@@ -1,0 +1,6 @@
+{
+    "name": "AntiWallhop",
+    "tree": {
+        "$path": "lib"
+    }
+}
