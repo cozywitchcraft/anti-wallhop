@@ -1,6 +1,6 @@
 {
-    "name": "AntiWallhop",
-    "tree": {
-        "$path": "lib"
-    }
+	"name": "AntiWallhop",
+	"tree": {
+		"$path": "lib"
+	}
 }
