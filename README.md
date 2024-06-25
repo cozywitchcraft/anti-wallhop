@@ -70,7 +70,7 @@ end
 
 ## Installation
 
-### Using wally
+### Using [Wally](https://github.com/UpliftGames/wally)
 
 Add `cozywitchcraft/anti-wallhop` to `wally.toml` as a dependency.
 
