@@ -1,7 +1,7 @@
 [package]
 name = "cozywitchcraft/anti-wallhop"
 description = "Patches wallhopping from the humanoid controller"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
