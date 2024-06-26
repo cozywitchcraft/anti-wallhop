@@ -48,8 +48,8 @@ function AntiWallhop.new(character: Model): AntiWallhop
 	local humanoid = character:FindFirstChildOfClass("Humanoid")
 	assert(humanoid, "Cannot find Humanoid")
 
-	local rootPart = humanoid.RootPart
-	assert(rootPart, "Cannot find HumanoidRootPart")
+	local rootPart = character:FindFirstChild("HumanoidRootPart")
+	assert(rootPart and rootPart:IsA("BasePart"), "Cannot find HumanoidRootPart")
 
 	-- Saves an __index call per frame
 	local isRigTypeR6 = humanoid.RigType == Enum.HumanoidRigType.R6
