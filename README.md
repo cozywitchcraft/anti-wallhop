@@ -75,7 +75,7 @@ end
 Add `cozywitchcraft/anti-wallhop` to `wally.toml` as a dependency.
 
 ```toml
-AntiWallhop = "cozywitchcraft/anti-wallhop@0.1.2"
+AntiWallhop = "cozywitchcraft/anti-wallhop@0.1.3"
 ```
 
 ### From the Creator Marketplace
