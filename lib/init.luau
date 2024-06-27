@@ -1,4 +1,25 @@
 --!strict
+
+--[[
+	AntiWallhop - Patches wallhopping from the humanoid controller
+
+	API:
+		AntiWallhop.new(character: Model) -> AntiWallhop
+			Initializes the anti-wallhop as disabled.
+		AntiWallhop:enable() -> ()
+			Enables the anti-wallhop.
+		AntiWallhop:disable() -> ()
+			Disables the anti-wallhop.
+		AntiWallhop:enableDebug() -> ()
+			Enables debug visuals. Each raycast is visualized with a line
+			colored red or green depending on the result.
+		AntiWallhop:disableDebug() -> ()
+			Disables debug visuals and cleans up debug instances.
+		AntiWallhop:destroy() -> ()
+			Cleans up connections and debug instances because character
+			destruction must be handled by the end user.
+--]]
+
 type AntiWallhopImpl = {
 	__index: AntiWallhopImpl,
 	new: (character: Model) -> AntiWallhop,
@@ -85,9 +106,8 @@ function AntiWallhop:isGrounded(): boolean
 
 	local verticalVelocity = self.rootPart.AssemblyLinearVelocity.Y
 
-	-- Floor detection uses an initial factor of 1.2 when grounded and 1.5 when
-	-- falling. Since we're only concerned with floor detection when falling,
-	-- the factor starts at 1.5.
+	-- Floor detection uses a factor of 1.2 when grounded and 1.5 when falling.
+	-- Since landing only occurs after falling, the factor begins at 1.5.
 	local factor = 1.5
 	local minVelocity = -125 * halfSize.Y
 
@@ -140,9 +160,8 @@ function AntiWallhop:onPostSimulation()
 
 	local isFalling = self.humanoid:GetState() == Enum.HumanoidStateType.Freefall
 
-	-- We're only worried about detecting the floor while the humanoid is falling.
-	-- This is because wallhopping only occurs when entering the landing state pre-
-	-- simulation, so we move it post-simulation.
+	-- Wallhopping occurs when entering the landing state before the physics
+	-- simulation, so landing is manually triggered post-simulation.
 	if isFalling and self:isGrounded() then
 		self.humanoid:ChangeState(Enum.HumanoidStateType.Landed)
 	end
