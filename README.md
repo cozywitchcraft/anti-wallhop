@@ -15,8 +15,6 @@ For reference, this change affects the humanoid so little that trussflicking, wh
 
 For those worried about an in-engine wallhop patch in the future, this module can also serve as a wallhop reimplementation by moving the landing floor detection from post-simulation to pre-animation. I haven't implemented this option for practicality's sake.
 
-I'll write an article further detailing how and why this was made and link it here when finished.
-
 You can test the latest version of the anti-wallhop [here](https://www.roblox.com/games/17884774403/Anti-Wallhop-Testing). The source code for the testing place can also be found at [cozywitchcraft/anti-wallhop-testing](https://github.com/cozywitchcraft/anti-wallhop-testing).
 
 ## Features
